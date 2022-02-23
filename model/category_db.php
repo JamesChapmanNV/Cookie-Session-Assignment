@@ -1,5 +1,3 @@
-
-
 <?php
 function get_categories() {
     global $db;
@@ -38,7 +36,6 @@ function add_category($name) {
 }
 
 function delete_category($category_id) {
-    
     try {
         global $db;
         $query = 'DELETE FROM categories

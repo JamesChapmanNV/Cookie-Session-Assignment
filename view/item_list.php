@@ -1,10 +1,23 @@
-
-
 <?php include 'header.php'; ?>
 <main>
+    <form action=".">
+        <label for="categoryDropdown">Categories:</label>
+            <select name="category_id" id="categoryDropdown">
+                <option value="NULL"> View All Categories</a></option>
+                <?php foreach ($categories as $category) : ?>
+                    <option value="<?php echo $category['categoryID']; ?>">
+                        <?php echo $category['categoryName']; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        <input type="submit" value="Submit">
+    </form>
+
     <section>
-        <!-- display a table of products -->
         <h2><?php echo $category_name; ?></h2>
+        <?php if($todos == NULL){ ?>
+            <br><p>NO TODO'S IN THIS CATEGORY!</p><br>
+        <?php }else { ?>
         <table>
             <tr>
                 <th>Title</th>
@@ -27,7 +40,7 @@
             </tr>
             <?php endforeach; ?>
         </table>
-
+        <?php  }?>
         <p>
             <a href="?action=show_add_form">Add ToDo</a>
         </p>
@@ -35,25 +48,8 @@
             <a href="?action=list_categories">View/Add/Delete Categories</a>
         </p>
     </section>
-
     <aside>
-        <!-- display a list of categories -->
-        <h2>Categories</h2>
-        <nav>
-        <ul>
-                <li>
-                    <a href="?category_id=NULL"> View All Categories</a>
-                </li>
-            <?php foreach ($categories as $category) : ?>
-                <li>
-                <a href="?category_id=<?php echo $category['categoryID']; ?>">
-                    <?php echo $category['categoryName']; ?>
-                </a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-        </nav>
-    </aside>
-
+                    <a href="?category_id=NULL"> View All ToDo's</a>
+    </aside>   
 </main>
 <?php include 'footer.php'; ?>

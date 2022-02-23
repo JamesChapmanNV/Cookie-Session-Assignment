@@ -49,20 +49,18 @@ if ($action == 'list_todos') {
     include('view/category_list.php');
 } else if ($action == 'add_category') {
     $name = filter_input(INPUT_POST, 'name');
-
-    // Validate inputs
     if ($name == NULL) {
         $error = "Invalid category name. Check name and try again.";
         include('view/error.php');
     } else {
         add_category($name);
-        header('Location: .?action=list_categories');  // display the Category List page
+        header('Location: .?action=list_categories');  
     }
 } else if ($action == 'delete_category') {
     $category_id = filter_input(INPUT_POST, 'category_id', 
             FILTER_VALIDATE_INT);
     delete_category($category_id);
-    header('Location: .?action=list_categories');      // display the Category List page
+    header('Location: .?action=list_categories');      
 }
 ?>
 

@@ -28,10 +28,9 @@
     </form>
     <p>
             <a href="?action=list_categories">Add Category</a>
-        </p>
+    </p>
     <p>
         <a href="index.php?action=list_todos">View ToDo List</a>
     </p>
-
 </main>
 <?php include 'footer.php'; ?>
