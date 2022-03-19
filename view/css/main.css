@@ -1,62 +1,70 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.bold {
-  font-weight: bold;
-}
-html {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-}
-body {
-  width: 100%;
-  min-height: 100vh;
-  background: rgb(199, 194, 207);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-header,
-main,
-footer {
-  width: 100%;
-  max-width: 500px;
-}
-header {
-  border-bottom: 8px solid #000;
-  background-color: rgb(26, 94, 24);
-}
-h1 {
-  font-size: 1.5rem;
-  padding: .5em  .5em;
-  color: #000;
-  background-color: rgb(26, 94, 24);
-}
-section {
-  padding-bottom: 1.5rem;
-  padding: 0.5rem 1em;
-  height:80%;
-  overflow:auto;
-}
-footer {
-  border-top: 9px solid #000;
-  padding-right: 0.5rem;
-}
-footer > p {
-  text-align: right;
-  font-size: 1rem;
-  margin: 1rem 0;
-}
-table {
-  border: solid 1px #000202;
-  border-collapse: collapse;
-  border-spacing: 1rem;
-  font: normal Arial, sans-serif;
+* { box-sizing: border-box;  }
+  .bold {
+    font-weight: bold;
+  }
+  html {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  body { 
+    font-family: Arial, Helvetica, sans-serif;
+    }
+  header { 
+    text-align: left;
+    border-bottom: 4px solid black; 
+    width: 80%;
+    }
+  footer { 
+    font-size: 75%;
+    font-style: italic; 
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif; 
+    padding: 2em;
+    background-color: white;
+    }
+  table {
+    display: flex; 
+    overflow: scroll;
+    flex-flow: column nowrap; 
+    }
+  td {
+    padding: 0.5em;
+    border: 2px solid black;
+    text-align: center;
+    }
+  th {
+    padding: 0.5em;
+    border: 2px solid black;
+    }
+  tr:nth-of-type(odd) { 
+    background-color:#F5FAFC; 
+    }
+  form { 
+    display: flex; 
+    padding: 0.5em;
+    flex-flow: column; 
+  }    
+  #make_filter, #type_filter, #class_filter {
+    display: flex; 
+    width: 80%;
+    flex-flow: column nowrap; 
+    font-size: 125%;
+  }
+  .sorters{
+    font-weight: bold;
+    padding: 0.5em;
+  }
+  .button{
+    width: 40%;
+    box-shadow: inset -2px -2px 3px rgba(0, 0, 0, .6);
+    font-weight: bold;
+  }
 
-}
-tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
+ @media (min-width: 600px) {
+  header { 
+    padding-left: 10%;
+    width: 100%;
+    }
+  table {
+    overflow:auto;
+    }  
+} 

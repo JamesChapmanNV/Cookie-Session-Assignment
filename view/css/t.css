@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.bold {
+  font-weight: bold;
+}
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: rgb(199, 194, 207);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header,
+main,
+footer {
+  width: 100%;
+  max-width: 500px;
+}
+header {
+  border-bottom: 8px solid #000;
+  background-color: rgb(26, 94, 24);
+}
+h1 {
+  font-size: 1.5rem;
+  padding: .5em  .5em;
+  color: #000;
+  background-color: rgb(26, 94, 24);
+}
+section {
+  padding-bottom: 1.5rem;
+  padding: 0.5rem 1em;
+  height:80%;
+  overflow:auto;
+}
+footer {
+  border-top: 9px solid #000;
+  padding-right: 0.5rem;
+}
+footer > p {
+  text-align: right;
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+table {
+  border: solid 1px #000202;
+  border-collapse: collapse;
+  border-spacing: 1rem;
+  font: normal Arial, sans-serif;
+
+}
+tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+
+* { box-sizing: border-box; }
+  .bold {
+    font-weight: bold;
+  }
+  html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+  }
+  body { 
+    background-color: #EAEAEA;
+    color: black; 
+    font-family: Arial, Helvetica, sans-serif;
+    }
+  header { 
+    text-align: left;
+    border-bottom: #535353; 
+    }
+  main {
+    padding-top: 1px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    display: block;
+    background-color: white;
+    padding-left: 30px;
+    overflow: auto;
+    }
+  h1 { 
+    font-family: Georgia, "Times New Roman", serif; 
+    margin-bottom: 0;
+    margin-top: 0;
+    letter-spacing: 0.25em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    }
+  footer { 
+    font-size: 75%;
+    font-style: italic; 
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif; 
+    padding: 2em;
+    background-color: white;
+    }
+  table {
+    border: 2px solid #3399CC;
+    border-collapse: collapse;
+    }
+  td {
+    padding: 0.5em;
+    border: 2px solid #3399CC;
+    text-align: center;
+    }
+  th {
+    padding: 0.5em;
+    border: 2px solid #3399CC;
+    }
+  tr:nth-of-type(odd) { 
+    background-color:#F5FAFC; 
+    }
+  form { display: flex; 
+          flex-flow: column nowrap; }    
+  input, textarea { margin-bottom: .5em; }
+
+  @media (min-width: 300px) {
+
+    section {
+      padding-left: 2em;
+      padding-right: 2em;
+      }
+    .content main {   
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr 1fr; 
+        }
+    header      { grid-row: 1 / 2; grid-column: 1 / 5; }
+    section    { grid-row: 2 / 3; grid-column: auto; }
+    #special   { grid-row: auto; grid-column: 1 / 5; }
+    footer     { grid-row: auto; grid-column: 1 / 5; }
+    form {
+        width: 60%;
+        display: grid;
+        grid-gap: 1em; 
+        gap: 1em;
+        grid-template-rows: auto;
+        grid-template-columns: 6em 1fr; 
+        }
+    input[type="submit"] { 
+        grid-column: 2/3;
+        width: 9em;
+        }
+}
+
+
+* { box-sizing: border-box; }
+  .bold {
+    font-weight: bold;
+  }
+  html {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  body { 
+    background-color: #EAEAEA;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+  header { 
+    text-align: left;
+    border-bottom: 4px solid black; 
+    width: 80%;
+    }
+  footer { 
+    font-size: 75%;
+    font-style: italic; 
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif; 
+    padding: 2em;
+    background-color: white;
+    }
+  table {
+    border: 2px solid black;
+    display: flex; 
+    overflow: scroll;
+    flex-flow: column nowrap; 
+    }
+  td {
+    padding: 0.5em;
+    border: 2px solid black;
+    text-align: center;
+    }
+  th {
+    padding: 0.5em;
+    border: 2px solid black;
+    }
+  tr:nth-of-type(odd) { 
+    background-color:#F5FAFC; 
+    }
+  form { 
+    display: flex; 
+    padding: 0.5em;
+    flex-flow: column; 
+  }    
+  #make_filter, #type_filter, #class_filter {
+    display: flex; 
+    width: 80%;
+    flex-flow: column nowrap; 
+    font-size: 125%;
+  }
+  .sorters{
+    font-weight: bold;
+    padding: 0.5em;
+  }
