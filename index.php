@@ -12,7 +12,6 @@ if ($action == NULL) {
         $action = 'list_vehicles';
     }
 }
-
 switch ($action) {
     case 'list_vehicles': 
         $filters = [];
