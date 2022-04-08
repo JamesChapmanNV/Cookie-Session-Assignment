@@ -1,4 +1,5 @@
 <?php
+
 require('../model/database.php');
 require('../model/vehicle_db.php');
 require('../model/class_db.php');
