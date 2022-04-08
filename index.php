@@ -1,4 +1,8 @@
 <?php
+$lifetime = 60 * 60 * 24 * 14; // 2 weeks in seconds
+session_set_cookie_params($lifetime, '/');
+session_start();
+
 require('model/database.php');
 require('model/vehicle_db.php');
 require('model/class_db.php');
@@ -12,6 +16,12 @@ if ($action == NULL) {
         $action = 'list_vehicles';
     }
 }
+
+$firstname = filter_input(INPUT_GET, 'firstname', FILTER_SANITIZE_STRING);
+if ($firstname) {
+    $_SESSION['userid'] = $firstname;
+}
+
 switch ($action) {
     case 'list_vehicles': 
         $filters = [];
@@ -36,6 +46,25 @@ switch ($action) {
         include('view/vehicles_list.php');
         break;
 
+    case 'register':
+        include('view/register.php');
+        break;
+        
+    case 'logout':
+            $firstname = $_SESSION['userid'];
+            unset($_SESSION['userid']);
+            session_destroy();
+            $session_name = session_name();
+            $expire = strtotime('-1 year');
+            $params = session_get_cookie_params();
+            $path = $params['path'];
+            $domain = $params['domain'];
+            $secure = $params['secure'];
+            $httponly = $params['httponly'];
+            setcookie($session_name, '', $expire, $path, $domain, $secure, $httponly);
+    
+            include('view/logout.php');
+            break;
     /*default:*/
     
 }
